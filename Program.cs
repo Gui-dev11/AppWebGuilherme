@@ -1,10 +1,15 @@
 using AppWebGuilherme.Components;
+using AppWebGuilherme.Configs;
+using AppWebGuilherme.DAO;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddScoped<Conexao>();
+builder.Services.AddScoped<ProcessoDAO>();
 
 var app = builder.Build();
 
